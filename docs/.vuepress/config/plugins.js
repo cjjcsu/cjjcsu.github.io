@@ -75,26 +75,19 @@ module.exports = [
   [
     'vuepress-plugin-baidu-tongji', // 百度统计
     {
-      hm: '503f098e7e5b3a5b5d8c5fc2938af002',
+      hm: '8a568845212e4fe780218cdf9b1160eb',
     },
   ],
   [
     'vuepress-plugin-comment', // 评论
     {
-      choosen: 'gitalk',
+      choosen: 'valine',
       options: {
-        clientID: 'a6e1355287947096b88b',
-        clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-        repo: 'blog-gitalk-comment', // GitHub 仓库
-        owner: 'xugaoyi', // GitHub仓库所有者
-        admin: ['xugaoyi'], // 对仓库有写权限的人
+        el: '#valine-vuepress-comment',
+        appId: '2hHc0CnCY8tnjhtrOMk8YNTj-gzGzoHsz',
+        appKey: 'x1g4RKoH09lCDRTuNQwXUMGd',
         // distractionFreeMode: true,
-        pagerDirection: 'last', // 'first'正序 | 'last'倒序
-        id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-        title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-        labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-        body:
-          '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
+        path: '<%- frontmatter.permalink %>'
       },
     },
   ],
